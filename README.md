@@ -38,3 +38,16 @@ Al recibir la trama anterior, el script centralizado en **Kali Linux** procesa e
 ### 3. Alerta Automatizada por Correo Electrónico
 De manera simultánea, el sistema utiliza **SMTP** (*Simple Mail Transfer Protocol* / Protocolo Simple de Transferencia de Correo) para enviar un reporte detallado con la fecha, la hora exacta y el contenido íntegro del evento detectado.
 
+## 🛡️ Principio de Mínimo Privilegio y Mejores Prácticas Perimetrales
+
+Como parte del diseño de arquitectura de seguridad implementado en este laboratorio, se integraron los lineamientos de **defensa en profundidad** y el **principio de mínimo privilegio**, asegurando que los flujos de red y los sistemas cumplan con los estándares de control de acceso:
+
+1. **Segmentación de Zonas de Confianza**: 
+   * **DMZ (Zona Desmilitarizada)**: Aislamiento perimetral estricto para servicios públicos, evitando el tránsito directo hacia la red interna en caso de compromiso.
+   * **Red Interna / Invitados**: Separación de segmentos mediante filtrado de paquetes y políticas de control de acceso para prevenir movimientos laterales.
+2. **Aplicación del Principio de Mínimo Privilegio**: 
+   * Las reglas de filtrado perimetral y los permisos del sistema se configuran para permitir únicamente el tráfico y las acciones estrictamente necesarias para la operación, denegando por defecto todo lo demás (*Deny All*).
+3. **Monitoreo Continuo y Respuesta Temprana**: 
+   * Centralización de registros (*syslogs*) en nodos de análisis (como el script SIEM en Python sobre Kali Linux) para la detección proactiva de anomalías y la notificación automatizada de eventos críticos mediante **SMTP**.
+4. **Gestión de Ciclo de Vida y Hardening**: 
+   * Políticas de actualización constante, respaldo de configuraciones y eliminación de credenciales de texto plano en código fuente para reducir la superficie de ataque y asegurar la resiliencia operativa.
