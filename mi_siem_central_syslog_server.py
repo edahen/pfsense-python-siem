@@ -13,8 +13,8 @@ PUERTO_SYSLOG = 514       # Puerto estándar de Syslog (UDP)
 
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587           # Puerto para STARTTLS
-REMITENTE = "eedenkely@gmail.com"
-DESTINATARIO = "eedenkely@gmail.com"
+REMITENTE = "tucorreo@gmail.com"
+DESTINATARIO = "tucorreo@gmail.com"
 
 # Reemplaza el texto entre comillas con tu contraseña de aplicación de 16 caracteres de Google
 APP_PASSWORD = "mcvujtxmdgqouxup"
